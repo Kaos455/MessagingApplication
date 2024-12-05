@@ -1,25 +1,32 @@
-const body = document.querySelector('body');
-
-
-
-async function getData(name) {
-    const url = new URL(`http://localhost:3000/test/${name}`);
-
+async function queryAPI(URL) {
     try { 
-        const response = await fetch(url);
-        if (!response.ok) {
-            throw new Error('Network response was not ok');
+        const response = await fetch(URL);
+        if (!response.ok) { 
+            throw new Error('Error Fetching Data');
         }
         const data = await response.json();
         return data;
     } catch (error) {
-        console.error('There has been a problem with your fetch operation:', error.message);
+        console.error('Error Fetching Data');
+        return null;
     }
 }
 
-document.addEventListener('DOMContentLoaded', async () => {
-    const data = await getData('Mark');
-    const p = document.createElement('p');
-    p.textContent = data?.message;
-    body.appendChild(p);
+document.addEventListener('DOMContentLoaded', () => {
+    const form = $('.search-form')
+    .submit(async (event) => {
+        event.preventDefault();
+
+        let URL = 'http://localhost:3000/checkUser/';
+        const searchValue = document.getElementById('search-input').value;
+        URL += searchValue;
+    
+        const data = await queryAPI(URL);
+        
+        if (data === null) {
+            $('.notification').css('visibility', 'hidden');
+        }
+        $('.notification').text(data.message).css('visibility', 'visible');;
+    })
+
 });
