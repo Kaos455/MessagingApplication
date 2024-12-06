@@ -1,0 +1,32 @@
+.avatar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8em;
+
+    max-height: 50px;
+    width: 100%;
+    border-style: none;
+    background: transparent;
+    padding: 0.15em;
+    border-radius: 1em;
+
+    color: #f4f4f9;
+
+    transition: background-color 0.3s ease;
+}
+
+.avatar:hover {
+    background-color: #875cbe;
+    cursor: pointer;
+}
+
+.avatar img { 
+    border-radius: 1em;
+}
+
+.avatar p { 
+    font-size: 1.2em;
+    font-weight: 500;
+}

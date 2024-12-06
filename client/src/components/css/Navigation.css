@@ -1,0 +1,175 @@
+/* Navbar Style */
+
+.navbar {
+    /* Display Settings */
+    display: flex; /* Flexbox */
+    flex-wrap: wrap; /* Allow wrapping */
+    justify-content: space-between; /* Horizontal alignment */
+    align-items: center; /* Vertical alignment */
+    
+    /* Box Model Settings */ 
+    padding: 0.8em 1.2em;
+
+    /* Colour Settings */
+    background-color: #5D2F9B;
+    color: white;
+}
+
+.navbar .logo {
+    /* Box Model Settings */
+    padding: 0.5em; /* Increase padding */
+    box-sizing: border-box; /* Include padding and border in the element's total width/height */
+    border-bottom: 1px solid transparent; /* Set the initial border to transparent */
+
+    /* Transition */
+    transition: background-color 0.3s ease; /* Smooth colour transition */
+}
+
+.navbar .logo:hover {
+    /* Colour Settings */
+    border-bottom: 1px solid #875cbe; /* Adds a border on hover */
+}
+  
+.navbar .logo a {
+    /* Style Settings */
+    text-decoration: none; /* Remove underline */
+
+    /* Font Settings */
+    font-size: 1.5em; /* 24px */
+    font-weight: 600; /* Semi-bold */
+
+    /* Colour Settings */
+    color: white;
+}
+
+.nav-links {
+    /* Display Settings */
+    display: flex; /* Flexbox */
+    align-items: center; /* Vertical alignment */
+
+    /* Box Model Settings */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+
+    /* Style Settings */
+    list-style: none; /* Remove default list style */
+}
+
+.nav-links button {
+    /* Box Model Settings */
+    margin-left: 1.2em; /* Spacing between links */
+}
+
+.nav-links button {
+    /* Style Settings */
+    text-decoration: none; /* Remove underline */
+    border: none;
+    
+    /* Box Model Settings */;
+    border-radius: 1em; /* Rounded corners */
+    padding: 0.5em;
+
+    /* Font Settings */
+    font-size: 1.2em; /* 20px */
+    font-weight: 500; /* Medium */
+
+    /* Colour Settings */
+    color: white;
+    background-color: #5D2F9B;
+
+    /* Transition */
+    transition: color 0.3s ease; /* Smooth colour transition */
+}
+
+.nav-links button:hover {
+    /* Colour Settings */
+    background-color: #875cbe; /* Change background colour */
+}
+
+/* Hamburger DropDown Menu */
+.hamburger {
+    /* Display Setting */
+    display: none; /* Hide by default */
+    flex-direction: column; /* Vertical alignment */
+    justify-content: space-around; /* Spacing between bars */
+
+    /* Box Model Settings */
+    width: 30px; /* Width of the hamburger */
+    height: 25px; /* Height of the hamburger */
+    border: none; /* Remove border */
+    background: transparent; /* Transparent background */
+
+    /* Cursor Settings */
+    cursor: pointer; /* Change cursor to pointer */
+}
+
+.hamburger .bar {
+    /* Box Model Settings */
+    height: 4px; /* Height of the bar */
+    width: 100%; /* Full width of Hamburger */
+    border-radius: 10px; /* Rounded corners */
+
+    /* Colour Settings */
+    background-color: #F4F4F9;
+
+    /* Transition */
+    transition: background-color 0.3s ease; /* Smooth colour transition */
+}
+
+.hamburger:hover .bar {
+    /* Colour Settings */
+    background-color: #c6c6c7; 
+}
+
+/* Media Query for Mobile Devices */
+@media (max-width: 768px) {
+    .nav-links {
+        /* Display Settings */
+        display: none; /* Hide when on Mobile */
+    }
+
+    .hamburger {
+        /* Display Settings */
+        display: flex; /* Show when on Mobile */
+    }
+
+    .navbar {
+        /* Display Settings */
+        justify-content: space-between; /* Horizontal alignment */
+        align-items: center; /* Vertical alignment */
+
+        /* Box Model Settings */
+        width: 100%; /* Full width */
+    }
+
+    .nav-links.active {
+        /* Display Settings */
+        display: flex; /* Show when active */
+        flex-direction: column; /* Vertical alignment */
+        align-items: center; /* Horizontal alignment */
+        gap: 1em;
+
+        /* Box Model Settings */
+        width: 100%; /* Full width */
+        margin-top: 1em;
+    }
+
+    .nav-links.active button {
+        /* Box Model Settings */
+        margin: 0.2em 0; /* Remove default margin */
+        width: 100%; /* Full width */
+        padding: 0.3em 0;
+        border-radius: 1em;
+
+        /* Style Settings */
+        text-align: center; /* Center text */
+        margin: auto;
+
+        transition: all 0.3s ease; /* Smooth transition */
+    }
+
+    .nav-links.active button:hover {
+        /* Colour Settings */
+        background-color: #875cbe; /* Change background colour */
+    }
+}
